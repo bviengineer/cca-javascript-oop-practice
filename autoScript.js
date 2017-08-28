@@ -5,7 +5,6 @@ var Auto = function Auto(make, model, year, transmission) {
     this.year = year;
     this.transmission = transmission;
 }
-
 //Car #1
 var myHonda = new Auto("Honda", "Pilot", "2010", "automatic");
 console.log(myHonda.make + " " + myHonda.model + " " + myHonda.year + " " + myHonda.transmission);
@@ -17,6 +16,10 @@ var Vehicle = function Vehicle(make, model, year, transmission, bodyStyle, featu
     this.feature = feature;
     this.noOfDoors = noOfDoors;
 }
+
+//Applying Inheritance
+Vehicle.prototype = Object.create(Auto.prototype);
+Vehicle.prototype.constructor = Vehicle;
 
 //Car #2
 var myAuto = new Vehicle("Toyota", "4Runner", "2017", "manual", "suv", "moon roof", 4);
